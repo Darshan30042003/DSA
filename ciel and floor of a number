@@ -1,0 +1,82 @@
+package problems;
+import java.util.Scanner;
+import java.util.Arrays;
+public class trailing_zero {
+	static int ciel(int[] arr,int key) {
+		Arrays.sort(arr);
+		int low=0;
+		int high=arr.length-1;
+		int mid=0;
+		while(low<=high) {
+			 mid=(low+high)/2;
+		
+			if(key==arr[mid]) {
+				return arr[mid];
+				
+			}
+			else if(key<arr[mid]){
+				high=mid-1;
+				
+				
+			}
+			else {
+				low=mid+1;
+				
+			}
+		}
+		if(low<arr.length) {
+		return arr[low];
+		}
+		else {
+			return -1;
+			}
+	}
+	static int floor(int[] arr,int key) {
+		Arrays.sort(arr);
+		int low=0;
+		int high=arr.length-1;
+		int mid=0;
+		while(low<=high) {
+			 mid=(low+high)/2;
+		
+			if(key==arr[mid]) {
+				return arr[mid];
+				
+			}
+			else if(key<arr[mid]){
+				high=mid-1;
+				
+				
+			}
+			else {
+				low=mid+1;
+				
+			}
+		}
+		if(high>0) {
+		return arr[high];
+		}
+		else{
+			return -1;
+			}
+	}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number1");
+		int key=sc.nextInt();
+		int[] arr= {10,20,30,40,50};
+		System.out.println(ciel(arr,key));
+		System.out.println(floor(arr,key));
+		
+		
+	}
+}
+
+o/p 80
+    -1
+    50
+
+
+    9
+    10
+    -1
