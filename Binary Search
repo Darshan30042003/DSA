@@ -1,7 +1,7 @@
 package problems;
 import java.util.Scanner;
 import java.util.Arrays;
-public class trailing_zero {
+public class Searching {
 	
 	static int search(int[] arr,int key) {
 		Arrays.sort(arr);
