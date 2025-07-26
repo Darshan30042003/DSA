@@ -1,0 +1,39 @@
+package problems;
+import java.util.Scanner;
+import java.util.Arrays;
+public class trailing_zero {
+	
+	static int search(int[] arr,int key) {
+		Arrays.sort(arr);
+		int low=0;
+		int high=arr.length-1;
+		int mid=0;
+		while(low<=high) {
+			 mid=(low+high)/2;
+		
+			if(key==arr[mid]) {
+				return mid;
+				
+			}
+			else if(key<arr[mid]){
+				high=mid-1;
+				
+				
+			}
+			else {
+				low=mid+1;
+				
+			}
+		}
+		return -1;
+		}
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the number1");
+		int key=sc.nextInt();
+		int[] arr= {10,20,30,40,50};
+		System.out.println(search(arr,key));
+		
+		
+	}
+}
